@@ -1,0 +1,10 @@
+# 共通
+*.pyc
+*.log
+*.sqlite3
+.vscode/
+
+__pycache__/
+venv/
+.env
+azure-ca.pem
