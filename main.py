@@ -21,6 +21,14 @@ class ChatRequest(BaseModel):
     family_id: int
     user_id: int
 
+@app.get(path="/")
+async def FastAPI():
+    return { "message" : "Hello World" }
+
+@app.get("/login")
+async def login():
+    return {"message": "Login successful"}
+
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db)):
     result = generate_response(request.user_input, request.family_id, request.user_id, db)
